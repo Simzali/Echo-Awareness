@@ -1,0 +1,228 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #1a1a1d; /* dark background */
+  color: #f5f6fa; /* light text for contrast */
+}
+
+/* Sleek Site Title */
+.site-title {
+  text-align: center;
+  background: linear-gradient(135deg, #2d3436, #1a1a1d);
+  color: #f5f6fa;
+  padding: 1.5rem 1rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.site-title h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Sleek Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #2d3436;
+  padding: 1rem 0;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.navbar a {
+  color: #f5f6fa;
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.navbar a:hover {
+  background-color: #8e44ad;
+  color: #f5f6fa;
+  transform: scale(1.1);
+}
+
+/* Main content area */
+.content {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #2d3436;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+}
+
+/* Hero section styling */
+.hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  color: #8e44ad;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Highlights and Get Started sections */
+.highlights, .get-started {
+  margin-bottom: 3rem;
+}
+
+.highlights h2, .get-started h2 {
+  font-size: 2rem;
+  color: #8e44ad;
+  margin-bottom: 1rem;
+}
+
+.highlights ul, .get-started ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.highlights li, .get-started li {
+  margin-bottom: 0.5rem;
+}
+
+/* CAD and download links */
+.cad-links {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.cad-links li {
+  margin-bottom: 1rem;
+}
+
+.cad-links a {
+  display: inline-block;
+  color: #8e44ad;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border: 2px solid #8e44ad;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.cad-links a:hover {
+  background-color: #8e44ad;
+  color: #f5f6fa;
+  transform: translateY(-3px);
+}
+
+/* Code block styling */
+.code-block {
+  background-color: #000;
+  color: #00ff88;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: Consolas, monospace;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-top: 1rem;
+  white-space: pre;
+}
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.member {
+  text-align: center;
+  max-width: 200px;
+  background-color: #333;
+  border-radius: 15px;
+  padding: 1rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+.member:hover {
+  transform: scale(1.05);
+}
+
+.member img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #8e44ad;
+  margin-bottom: 0.8rem;
+}
+
+.member h2 {
+  margin: 0.4rem 0 0.2rem 0;
+  color: #8e44ad;
+  font-size: 1.4rem;
+}
+
+.member p {
+  font-size: 1.1rem;
+  color: #f5f6fa;
+}
+
+.future-plans ul, .future-plans li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f5f6fa;
+}
+
+.future-plans ul ul {
+  list-style-type: circle;
+  margin-left: 2rem;
+}
+
+.mission p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 1rem auto 2rem auto;
+  color: #f5f6fa;
+}
+.navbar a,
+.navbar a:visited {
+  color: #f5f6fa;
+}
+
+/* Make other site links (e.g., in content) bright purple and keep them readable when visited */
+.content a,
+.content a:visited {
+  color: #8e44ad;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.content a:hover {
+  color: #b97fdb;
+}
+
+.wiring-diagram {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;      /* never exceed the container width */
+  width: 100%;          /* fill the container gracefully */
+  height: auto;         /* keep aspect ratio */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+}

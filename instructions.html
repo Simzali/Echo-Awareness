@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assembly Guide - The Bat Visual Aid</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <header class="site-title">
+    <h1>The Bat Visual Aid</h1>
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="versions.html">Versions</a>
+    <a href="instructions.html">Assembly Guide</a>
+  </nav>
+
+  <main class="content">
+    <section class="materials">
+      <h1>Materials Needed</h1>
+      <ul>
+        <li>Arduino Uno board</li>
+        <li>Passive buzzer (1)</li>
+        <li>Prototype expansion module (use only the breadboard part) (1)</li>
+        <li>Ultrasonic sensors (2)</li>
+        <li>USB to printer cable (1)</li>
+        <li>9V battery (1)</li>
+        <li>Breadboard jumper wires (10)</li>
+        <li>Female to male Dupont wires (8)</li>
+      </ul>
+    </section>
+
+    <section class="wiring-guide">
+      <h1>Wiring</h1>
+      <p>Follow the wiring schematic below to connect all components correctly:</p>
+      <img src="diagram.png" alt="Wiring Diagram for The Bat Visual Aid" class="wiring-diagram">
+    </section>
+
+    <section class="upload-code">
+      <h1>Upload the Code</h1>
+      <p>Connect your computer to the Arduino Uno using the USB to printer cable. Open the Arduino IDE, copy the code provided in the <a href="versions.html">Versions</a> tab, paste it into a new Arduino sketch, and follow these steps:</p>
+      <ol>
+        <li>Select your Arduino board: go to <strong>Tools &gt; Board &gt; Arduino Uno</strong>.</li>
+        <li>Select the correct port: go to <strong>Tools &gt; Port</strong> and choose the port labeled with "Arduino".</li>
+        <li>Click the checkmark to verify your code compiles without errors.</li>
+        <li>Click the right arrow button to upload the code to your Arduino board.</li>
+      </ol>
+    </section>
+
+    <section class="print-cad">
+      <h1>Print the 3D Parts</h1>
+      <p>Download and print the base and lid CAD files for your Bat Visual Aid device:</p>
+      <div class="code-downloads">
+        <a href="https://cad.onshape.com/documents/1e505d7947b4ffd04ba94f66" target="_blank" class="download-button">Print Base CAD</a>
+        <a href="https://cad.onshape.com/documents/1e505d7947b4ffd04ba94f66" target="_blank" class="download-button">Print Lid CAD</a>
+      </div>
+    </section>
+
+    <section class="assembly">
+      <h1>Final Assembly</h1>
+      <p>Once all components are wired, code is uploaded, and your 3D-printed parts are ready, assemble everything in a way that securely mounts the sensors and electronics inside the base, then attach the lid. Make sure the sensors are properly exposed so they can detect obstacles, and that the buzzer is securely in place. Test your device to ensure the buzzer sounds correctly at different distances.</p>
+    </section>
+  </main>
+
+</body>
+</html>

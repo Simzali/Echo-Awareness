@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Versions</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  
+  <header class="site-title">
+    <h1>The Bat Visual Aid</h1>
+  </header>
+
+  <nav class="navbar">
+    <a href="index.html" class="bat-nav">Home</a>
+    <a href="about.html" class="bat-nav">About</a>
+    <a href="versions.html" class="bat-nav">Versions</a>
+    <a href="instructions.html" class="bat-nav">Assembly Guide</a>
+  </nav>
+
+
+  <main class="content">
+    <h1>CAD</h1>
+    <h2>Version 1</h2>
+    <ul class="cad-links">
+      <li><a href="https://cad.onshape.com/documents/1e505d7947b4ffd04ba94f66" target="_blank">Base CAD File</a></li>
+      <li><a href="https://cad.onshape.com/documents/1e505d7947b4ffd04ba94f66" target="_blank">Lid CAD File</a></li>
+      <li><a href="https://cad.onshape.com/documents/bcd24ac192d956ec06a57d45/w/ab65be7865ea55d02045f52a/e/b203fbc598fc1b3246511bf1" target="_blank">Cane Adapter CAD File</a></li>
+      <li><a href="https://cad.onshape.com/documents/6182f4f05a551f5f7e98708b" target="_blank">Handheld Adapter CAD File</a></li>
+    </ul>
+
+    <h1>Code</h1>
+    <h2>Version 1 (Arduino C++)</h2>
+    <pre class="code-block"><code>
+#define trigPin 11
+#define echoPin 12
+#define buzzerPin 10
+#define trigPin2 6
+#define echoPin2 7
+
+long duration1, duration2;
+int distance1, distance2, finalDistance;
+
+void setup() {
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(trigPin2, OUTPUT);
+  pinMode(echoPin2, INPUT);
+  pinMode(buzzerPin, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Sensor 1
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  duration1 = pulseIn(echoPin, HIGH);
+  distance1 = duration1 * 0.034 / 2;
+
+  // Sensor 2
+  digitalWrite(trigPin2, LOW);
+  delayMicroseconds(2);
+  digitalWrite(trigPin2, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin2, LOW);
+  duration2 = pulseIn(echoPin2, HIGH);
+  distance2 = duration2 * 0.034 / 2;
+
+  // Choose the closer object
+  finalDistance = min(distance1, distance2);
+
+  Serial.print("Distance 1: ");
+  Serial.print(distance1);
+  Serial.print(" cm | Distance 2: ");
+  Serial.print(distance2);
+  Serial.print(" cm | Closest: ");
+  Serial.print(finalDistance);
+  Serial.println(" cm");
+
+  // Buzz based on distance
+  if (finalDistance > 0 && finalDistance <= 30) {
+    tone(buzzerPin, 1500); // Very close
+  } 
+  else if (finalDistance > 30 && finalDistance <= 60) {
+    tone(buzzerPin, 1000); // Medium
+  } 
+  else if (finalDistance > 60 && finalDistance <= 90) {
+    tone(buzzerPin, 500); // Far
+  } 
+  else {
+    noTone(buzzerPin);
+  }
+
+  delay(100);
+}
+    </code></pre>
+    
+    <section class="wiring">
+      <h2>Wiring</h2>
+      <img src="diagram.png" alt="Wiring Diagram for The Bat Visual Aid" class="wiring-diagram">
+    </section>
+  </main>
+
+
+</body>
+</html>
